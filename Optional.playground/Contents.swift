@@ -17,7 +17,7 @@ if let safeAge = age {
 } else {
     print("age = nil")
 }
- 
+
 //Nil coalescing operator (соединения с nil)
 let name: String? = nil
 let unwrappedName = name ?? "Anonymous"
@@ -44,12 +44,30 @@ if let getNumber = number{
 
 if true {
     let age = "26a"
-
+    
     if let intAge = Int(age) { //Optional binding
         print(intAge)
     } else {
         print("age is nil")
     }
+    
+    // 1. Задать строковые переменные и если их можно преобразовать в Int, то нужно найти сумму
+    
+    let one = "123"
+    let two = "1aa"
+    let three = "14"
+    let four = "12"
+    
+    let safeOne = Int(one)
+    
+    let safeTwoo = Int(two) ?? 0
+    
+    let safeThree = Int(three)
+    
+    let safeFour = Int(four) ?? 0
+    
+    let sum = (safeOne ?? 0) + safeTwoo + (safeThree ?? 0) + safeFour
+    print("sum = \(sum)")
 }
 
 
