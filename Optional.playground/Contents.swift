@@ -3,7 +3,7 @@ import UIKit
 var age: Int? = 12
 age = nil
 
-// Forced unwrapping (принудительная распаковка) - лучше не использовать
+// Forced unwrapping (принудительная распаковка) - лучше не использовать!
 if age == nil {
     print("age is nil")
 } else {
@@ -39,6 +39,20 @@ if let getNumber = number{
     print("number is nil")
     
 }
+
+// MARK: Задачи Скутаренко
+
+if true {
+    let age = "26a"
+
+    if let intAge = Int(age) { //Optional binding
+        print(intAge)
+    } else {
+        print("age is nil")
+    }
+}
+
+
 
 
 
