@@ -63,6 +63,8 @@ let resultArray = startArray.compactMap { $0 }
 print(resultArray)
 
 
+// MARK: Задачи Скутаренко
+
 if true {
     
 }
