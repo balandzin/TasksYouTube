@@ -26,3 +26,12 @@ if true {
     var result = number % 2 == 0 ? "Четное" : "Нечетное"
     print("3. result = \(result)")
 }
+
+// MARK: - String, Character
+// У вас есть константа с произвольным текстом. Получите новое значение в котром символы будут стоять в обратном порядке
+if true {
+    var str1 = "Какой прекрасный день!"
+
+    var result = Array(str1.reversed())
+    print("4. \(String(result))")
+}
