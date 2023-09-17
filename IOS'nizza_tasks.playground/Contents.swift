@@ -30,8 +30,28 @@ if true {
 // MARK: - String, Character
 // У вас есть константа с произвольным текстом. Получите новое значение в котром символы будут стоять в обратном порядке
 if true {
-    var str1 = "Какой прекрасный день!"
-
+    var str1 = "!ьнед йынсаркерп йокаК"
+    
     var result = Array(str1.reversed())
     print("4. \(String(result))")
+}
+
+// Посчитайте количество гласных в строке
+
+if true {
+    let array: [Character] = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я" ]
+    let str = "Какой прекрасный день"
+    var arrayChar = [Character]()
+    var count = 0
+    
+    for i in str.lowercased() {
+        arrayChar.append(i)
+    }
+
+    for element in arrayChar {
+        if array.contains(element){
+            count += 1
+        }
+    }
+    print("5. count = \(count)")
 }
