@@ -18,3 +18,11 @@ if true {
     let result = sum * (100 - discount) / 100
     print("2. result = \(result)")
 }
+
+// Напишите программу, котрая будет определять является ли число четным или не четным
+if true {
+    let number = 12
+    
+    var result = number % 2 == 0 ? "Четное" : "Нечетное"
+    print("3. result = \(result)")
+}
