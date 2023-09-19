@@ -112,3 +112,22 @@ if true {
     var averageSum = Double(sum) / Double(count)
     print("8. averageSum = \(averageSum)")
 }
+
+// Создайте массив типа String, содержащий произвольное значение, часть значений должна повторяться. Удалите все повторяющиеся элементы, чтобы массив содержал только уникальные значения
+if true {
+    
+    let array: [String] = ["Hi", "as", "Yi", "Yi", "Yi", "as", "ert", "as"]
+    let resultArray = Set(array)
+    let uniqArray = Array(resultArray)
+    
+    var uniqResult: [String] = []
+    for i in array {
+        if uniqResult.contains(i) {
+            continue
+        } else {
+            uniqResult.append(i)
+        }
+    }
+    print("9. \(uniqArray)")
+    print("9. \(uniqResult)")
+}
