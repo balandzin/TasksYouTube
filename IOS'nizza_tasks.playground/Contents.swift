@@ -80,12 +80,35 @@ if true {
 if true {
     let array: [Int] = [2, 42, -47, 0, 45678]
     //let maxElement = array.max()
-    var maxElement = array[0]
+    var maxElement: Int? = nil
     
     for element in array {
-        if element > maxElement {
+        if let result = maxElement {
+            if element > result {
+                maxElement = element
+            }
+        } else {
             maxElement = element
         }
     }
     print("7. max = \(maxElement)")
+}
+
+// Найдите среднее арифметическое чисел в массиве
+if true {
+    let array: [Int] = [2, 42, -47, 0, 0]
+    var sum = 0
+    var count = array.count
+    
+    if !array.isEmpty {
+        for element in array {
+            sum += element
+        }
+    } else {
+        print("Array is empty")
+    }
+    
+    
+    var averageSum = Double(sum) / Double(count)
+    print("8. averageSum = \(averageSum)")
 }
