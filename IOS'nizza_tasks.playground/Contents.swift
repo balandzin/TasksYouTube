@@ -79,9 +79,13 @@ if true {
 // В произвольном массиве типа Int найдите наибольший элемент
 if true {
     let array: [Int] = [2, 42, -47, 0, 45678]
+    //let maxElement = array.max()
+    var maxElement = array[0]
     
-    let maxElement = array.max()
-    print("7. max = \(maxElement!)")
-    
-    
+    for element in array {
+        if element > maxElement {
+            maxElement = element
+        }
+    }
+    print("7. max = \(maxElement)")
 }
