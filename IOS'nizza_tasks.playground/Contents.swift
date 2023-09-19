@@ -122,12 +122,41 @@ if true {
     
     var uniqResult: [String] = []
     for i in array {
-        if uniqResult.contains(i) {
-            continue
-        } else {
+        if !uniqResult.contains(i) {
             uniqResult.append(i)
         }
     }
     print("9. \(uniqArray)")
     print("9. \(uniqResult)")
+}
+
+// MARK: - Задача
+/*
+ Предствавим, что вам нужно написать программу для кассы в магазинаб которая будет пробивать покупки покупателя и подсчитывать итоговую стоимость.
+ Создайте словарь, содержащий список покупок и стоимость каждой позиции.
+ подсчитайте сумму за все покупки.
+ Примените скидку к товарам по карте лояльности (3%).
+ Посчитайте итоговую сумму.
+ Распечатайте чек в консоль, содержащий список товаров и стоимость каждой позиции. суму без скидки, размер скидки, суььу со скидкой.
+ */
+
+// MARK: - Усложняем задачу. Применяем классы, структуры и функции
+// Решить задачу с новыми возможностями.
+
+if true {
+    let shoppingList = ["Молоко": 2.5, "Яйца": 3.5, "Хлеб": 2.0, "Сыр": 4.8, "Пиво": 3.0, "Чипсы": 4.6,]
+    let discont: Double = 3
+    var sum: Double = 0
+    
+    for (_, value) in shoppingList {
+        sum += value
+    }
+    
+    let sumWithDiscont = sum * (100 - discont) / 100
+    
+    for (key, value) in shoppingList {
+        var discintOnePice = value * discont / 100
+        var valueWithCount = value * (100 - discont) / 100
+        print("\(key) - \(value) - \(valueWithCount) - \(discintOnePice)")
+    }
 }
