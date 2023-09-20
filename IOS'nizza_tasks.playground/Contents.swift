@@ -211,7 +211,7 @@ if true {
             print("\n-----Желаемые покупки-----")
             for item in products {
                 
-                productList.append("\n\(item.name), количество: \(item.quantity), цена товара: \(item.cost), приоритет покупки: \(item.priority), сумма: \(item.sum)")
+                productList.append("\(item.name), количество: \(item.quantity), цена товара: \(item.cost), приоритет покупки: \(item.priority), сумма: \(item.sum)\n")
                 resultSum += item.sum
             }
     
