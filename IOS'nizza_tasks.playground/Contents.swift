@@ -91,7 +91,7 @@ if true {
             maxElement = element
         }
     }
-    print("7. max = \(maxElement)")
+    print("7. max = \(String(describing: maxElement)))")
 }
 
 // Найдите среднее арифметическое чисел в массиве
@@ -144,19 +144,24 @@ if true {
 // Решить задачу с новыми возможностями.
 
 if true {
-    let shoppingList = ["Молоко": 2.5, "Яйца": 3.5, "Хлеб": 2.0, "Сыр": 4.8, "Пиво": 3.0, "Чипсы": 4.6,]
-    let discont: Double = 3
-    var sum: Double = 0
+    let shoppingList: [String: Double] = ["Молоко": 2.5,
+                                          "Яйца": 3.5,
+                                          "Хлеб": 2.0,
+                                          "Сыр": 4.8,
+                                          "Пиво": 3.0,
+                                          "Чипсы": 4.6]
+    let discount: Double = 3
+    var costProducts: Double = 0
     
-    for (_, value) in shoppingList {
-        sum += value
-    }
     
-    let sumWithDiscont = sum * (100 - discont) / 100
+
     
+    print("10.")
     for (key, value) in shoppingList {
-        var discintOnePice = value * discont / 100
-        var valueWithCount = value * (100 - discont) / 100
-        print("\(key) - \(value) - \(valueWithCount) - \(discintOnePice)")
+        costProducts += value
+        var discountOnePice = value * discount / 100
+        var valueWithCount = value * (100 - discount) / 100
+        print("\(key) - \(value) - \(valueWithCount) - \(discountOnePice)")
     }
+    let sumWithDiscont = costProducts * (100 - discount) / 100
 }
