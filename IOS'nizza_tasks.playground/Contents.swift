@@ -164,7 +164,7 @@ if true {
             
             for item in products {
                 costProducts += item.sum
-                var discountOnePice = item.cost * discount / 100
+                var discountOnePice = round(item.cost * discount)
                 var valueWithCount = item.cost * (100 - discount) / 100
                 var result = item.cost * Double(item.qty) * (100 - discount) / 100
                 productList.append("\n \(item.name) ---> \(item.cost) - \(valueWithCount) - \(discountOnePice) - \(result)")
