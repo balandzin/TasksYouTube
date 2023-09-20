@@ -185,3 +185,46 @@ if true {
     
     
 }
+
+if true {
+    struct Product {
+        let name: String
+        let cost: Double
+        let quantity: Int
+        let priority: Priority
+        var sum: Double {
+            cost * Double(quantity)
+        }
+        
+        enum Priority {
+            case low
+            case medium
+            case high
+        }
+    }
+    
+    struct List {
+        func myList(products: [Product]) {
+            var resultSum: Double = 0
+            var productList: String = """
+            """
+            print("\n-----Желаемые покупки-----")
+            for item in products {
+                
+                productList.append("\n\(item.name), количество: \(item.quantity), цена товара: \(item.cost), приоритет покупки: \(item.priority), сумма: \(item.sum)")
+                resultSum += item.sum
+            }
+    
+            print(productList)
+            print("------------------------")
+            print("ИТОГОВАЯ СУММА: \(resultSum)")
+        }
+    }
+    
+    List().myList(products: [Product(name: "Apple Watch Ultra", cost: 1000, quantity: 1, priority: .high),
+                             Product(name: "Apple AirPods Pro 2", cost: 330, quantity: 1, priority: .high),
+                             Product(name: "Apple Iphone 14pro max", cost: 1500, quantity: 1, priority: .medium),
+                             Product(name: "SSD Disk", cost: 100, quantity: 2, priority: .medium)
+                            ])
+    
+}
