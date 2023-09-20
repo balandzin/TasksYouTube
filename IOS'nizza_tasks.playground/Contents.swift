@@ -144,24 +144,44 @@ if true {
 // Решить задачу с новыми возможностями.
 
 if true {
-    let shoppingList: [String: Double] = ["Молоко": 2.5,
-                                          "Яйца": 3.5,
-                                          "Хлеб": 2.0,
-                                          "Сыр": 4.8,
-                                          "Пиво": 3.0,
-                                          "Чипсы": 4.6]
-    let discount: Double = 3
-    var costProducts: Double = 0
     
-    
-
-    
-    print("10.")
-    for (key, value) in shoppingList {
-        costProducts += value
-        var discountOnePice = value * discount / 100
-        var valueWithCount = value * (100 - discount) / 100
-        print("\(key) - \(value) - \(valueWithCount) - \(discountOnePice)")
+    struct Product {
+        let name: String
+        let cost: Double
+        let qty: Int
+        var sum: Double {
+            cost * Double(qty)
+        }
     }
-    let sumWithDiscont = costProducts * (100 - discount) / 100
+    
+    struct Cashier {
+        
+        func calculate(products: [Product]) {
+            let discount: Double = 3
+            var costProducts: Double = 0
+            var productList: String = """
+            """
+            
+            for item in products {
+                costProducts += item.sum
+                var discountOnePice = item.cost * discount / 100
+                var valueWithCount = item.cost * (100 - discount) / 100
+                var result = item.cost * Double(item.qty) * (100 - discount) / 100
+                productList.append("\n \(item.name) ---> \(item.cost) - \(valueWithCount) - \(discountOnePice) - \(result)")
+            }
+            print(productList)
+            let sumWithDiscont = costProducts * (100 - discount) / 100
+            print("ИТОГОВАЯ СУММА: \(sumWithDiscont)")
+        }
+    }
+    
+    Cashier().calculate(products: [Product(name: "Молоко", cost: 2.5, qty: 2),
+                                   Product(name: "Яйца", cost: 3.5, qty: 1),
+                                   Product(name: "Хлеб", cost: 2.2, qty: 1),
+                                   Product(name: "Сыр", cost: 4.8, qty: 2),
+                                   Product(name: "Пиво", cost: 3.0, qty: 7),
+                                   Product(name: "Чипсы", cost: 4.6, qty: 2)
+                                  ])
+    
+    
 }
