@@ -167,7 +167,7 @@ if true {
                 var discountOnePice = round(item.cost * discount)
                 var valueWithCount = item.cost * (100 - discount) / 100
                 var result = item.cost * Double(item.qty) * (100 - discount) / 100
-                productList.append("\n \(item.name) ---> \(item.cost) - \(valueWithCount) - \(discountOnePice) - \(result)")
+                productList.append("\n\(item.name) ---> \(item.cost) - \(valueWithCount) - \(discountOnePice) - \(result)")
             }
             print(productList)
             let sumWithDiscont = costProducts * (100 - discount) / 100
