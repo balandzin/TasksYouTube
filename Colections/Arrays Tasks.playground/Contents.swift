@@ -262,7 +262,13 @@ if true {
 }
 
 
-
+// 16. фильтровать по параметру
+if true {
+    var array = [-34, 32, 44, -56, 44, -6, 20, 68, -6, 8, 8, -64]
+    
+    let result = array.filter { $0 > -34 }
+    print("16. \(result)")
+}
 
 
 
