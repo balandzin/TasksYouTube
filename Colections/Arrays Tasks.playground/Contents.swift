@@ -188,9 +188,37 @@ if true {
 }
 
 //11. Заменить в массиве отрицательные числа нулем
+if true {
+    var array = [-34, 32, 44, -56, 44, -6, 20, 68, -6, 8, 8, -64]
+    
+    for (index, item) in array.enumerated() {
+        if item < 0 {
+            array[index] = 0
+        }
+    }
+    
+    print("11. \(array)")
+}
+//12. Cортировка массива по убыванию(возрастанию)
 
-//2 – Сортировка массива по убыванию(возрастанию)
-//
+if true {
+    var array = [-34, 32, 44, -56, 44, -6, 20, 68, -6, 8, 8, -64]
+    
+    //array.sort(by: <)
+    
+    for i in 0..<array.count - 1 {
+        for j in (0...array.count - 2 - i) {
+            if array[j] > array[j + 1] {
+                var temp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = temp
+            }
+        }
+    }
+
+    print("12. \(array)")
+}
+
 //3 – Найти max(min) элемент в массиве
 //
 //4 – Найти сумму элементов массива
