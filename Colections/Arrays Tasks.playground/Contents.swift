@@ -219,9 +219,39 @@ if true {
     print("12. \(array)")
 }
 
-//3 – Найти max(min) элемент в массиве
-//
+//13. Найти max(min) элемент в массиве
+
+if true {
+    var array = [-34, 32, 44, -56, 44, -6, 20, 68, -6, 8, 8, -64]
+    var min = Int.max
+    var max = Int.min
+    
+    if !array.isEmpty {
+        for item in array {
+            if item < min {
+                min = item
+            }
+            if item > max {
+                max = item
+            }
+        }
+    } else {
+        print("The array is empty")
+    }
+
+    print("13. min =  \(min), max = \(max)")
+}
 //4 – Найти сумму элементов массива
+if true {
+    var array = [34, 32, 44, 56, 44, 6, 20, 68, 6, 8, 8, 64]
+    var sum = 0
+    
+    for item in array {
+        sum += item
+    }
+    
+    print("14. sum =  \(sum)")
+}
 
 
 
