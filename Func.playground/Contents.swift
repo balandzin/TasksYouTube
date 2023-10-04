@@ -102,7 +102,47 @@ if true {
 }
 
 /*
- Стрелок стреляет в мишень. Диаметр центрального круга (10-ки) - 1 см, толщина каждого кольца мишени - 1 см, всего областей мишени 10 (9 колец и один круг - 10-ка, совмещённая с центром координатной плоскости). Известны координаты 5-ти попаданий.
+ Стрелок стреляет в мишень. Радиус центрального круга (10-ки) - 1 см, толщина каждого кольца мишени - 1 см, всего областей мишени 10 (9 колец и один круг - 10-ка, совмещённая с центром координатной плоскости). Известны координаты 3 попаданий.
  Посчитать сумму выбитых очков. Возможно попадания в «Молоко»
  */
+
+if true {
+    let shot1 = (2.5, 2.5)
+    let shot2 = (0.0, 0.0)
+    let shot3 = (0.0, 0.0)
+    
+    func getTotalScore(shot1: (Double, Double), shot2: (Double, Double), shot3: (Double, Double)) {
+        let length1 = sqrt(shot1.0 * shot1.0 + shot1.1 * shot1.1)
+        let length2 = sqrt(shot2.0 * shot2.0 + shot2.1 * shot2.1)
+        let length3 = sqrt(shot3.0 * shot3.0 + shot3.1 * shot3.1)
+        
+        let score1 = getScoreOneShot(length: length1)
+        let score2 = getScoreOneShot(length: length2)
+        let score3 = getScoreOneShot(length: length3)
+        
+        let result = score1 + score2 + score3
+        
+        print("result = \(result)")
+    }
+    
+    func getScoreOneShot(length: Double) -> Int {
+        let result = switch length {
+        case 0..<2: 10
+        case 2..<4: 9
+        case 4..<6: 8
+        case 6..<8: 7
+        case 8..<10: 6
+        case 10..<12: 5
+        case 12..<14: 4
+        case 14..<16: 3
+        case 16..<18: 2
+        case 18..<20: 1
+        default: 0
+        }
+        
+        return result
+    }
+    
+    getTotalScore(shot1: shot1, shot2: shot2, shot3: shot3)
+}
 
