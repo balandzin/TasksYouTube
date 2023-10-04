@@ -78,6 +78,26 @@ print(arrayResult.count)
  */
 
 if true {
+    var deposit = 10000.0
+    let years = 5
+    let persent = {
+        if years < 10000 {
+            7
+        } else if years < 50000 {
+            7
+        } else {
+            10
+        }
+    }
     
+    func calculateProfit ( deposit: inout Double, years: Int, percent: Int) -> Double {
+        for _ in 1...years {
+            deposit = deposit + deposit * Double(percent) / 100
+        }
+        return deposit
+    }
+    
+    let result = calculateProfit(deposit: &deposit, years: years, percent: persent())
+    print(result)
 }
 
