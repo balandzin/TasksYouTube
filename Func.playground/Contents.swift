@@ -29,7 +29,12 @@ let arr = [-1, 3, -5, 67, 8, 3, -2, 34, 67, 123]
 if let tuple = getMinMax(array: arr) {
     tuple.min
     tuple.max
+    
+    print(tuple.min)
+    print(tuple.max)
 }
+
+
 
 
 
