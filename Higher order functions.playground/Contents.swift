@@ -18,3 +18,18 @@ let numbersReduce = numbers.reduce(0, +)
 
 // zip
 let names = ["John", "Aaron", "Tim", "Ted", "Steven"]
+let points = [90, 45, 56, 23, 56]
+
+let totalScoreZip = Array(zip(names, points))
+print(totalScoreZip)
+
+// flatMap
+let array2D = [[1, 2], [3, 4], [5, 6], [7, 8]]
+let array1D = array2D.flatMap { $0 }
+print(array1D)
+
+// joined
+//let array1DJoined = Array(array2D.joined(separator: [0]))
+let array1DJoined = Array(array2D.joined())
+//let array1DJoined = array2D.joined().map{$0}
+print(array1DJoined)
